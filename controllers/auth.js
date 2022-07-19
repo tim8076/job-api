@@ -1,5 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
 const User = require('../models/User');
+const { BadRequestError } = require('../errors');
+const bcrypt = require('bcryptjs');
 
 const register = async (req, res) => {
   const user = new User({ ...req.body });
@@ -15,3 +17,7 @@ module.exports = {
   register,
   login,
 }
+
+  // if (!name || !password || !email) {
+  //   throw new BadRequestError('Please provide name, email and password');
+  // }
