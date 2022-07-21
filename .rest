@@ -1,19 +1,54 @@
-###
+### register user
 POST http://127.0.0.1:3000/api/v1/auth/register
 content-type: application/json
 
 {
-  "name": "woo3",
-  "email": "woo3@gmail.com",
+  "name": "peter2",
+  "email": "peter2@gmail.com",
   "password": "123456"
 }
 
-### 
+### login user
 POST http://127.0.0.1:3000/api/v1/auth/login
 content-type: application/json
 
 {
-  "name": "john",
-  "email": "john@gmail.com",
-  "password": "12345"
+  "email": "woo1@gmail.com",
+  "password": "1234"
+}
+
+###  create job
+
+POST http://127.0.0.1:3000/api/v1/job/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ4Yzc5ZTU5YTI1MzVkYmNmYTMxY2IiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4Mzc0MDQ2LCJleHAiOjE2NjA5NjYwNDZ9.oHxZnVpUqZSQUg8oA8ORiVN94k7jdQFJZtjv-lU1tjU
+
+{
+  "company": "facebook",
+  "position": "back-end developer"
+}
+
+### get all jobs
+
+GET http://127.0.0.1:3000/api/v1/job/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ4Yzc5ZTU5YTI1MzVkYmNmYTMxY2IiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4Mzc0MDQ2LCJleHAiOjE2NjA5NjYwNDZ9.oHxZnVpUqZSQUg8oA8ORiVN94k7jdQFJZtjv-lU1tjU
+
+
+### get single job
+
+GET http://127.0.0.1:3000/api/v1/job/62d8f74443b67a25f0092cc8
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ4Yzc5ZTU5YTI1MzVkYmNmYTMxY2IiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4Mzc0MDQ2LCJleHAiOjE2NjA5NjYwNDZ9.oHxZnVpUqZSQUg8oA8ORiVN94k7jdQFJZtjv-lU1tjU
+
+
+### update single job
+
+PATCH http://127.0.0.1:3000/api/v1/job/62d8f74443b67a25f0092cc8
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ4Yzc5ZTU5YTI1MzVkYmNmYTMxY2IiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4Mzc0MDQ2LCJleHAiOjE2NjA5NjYwNDZ9.oHxZnVpUqZSQUg8oA8ORiVN94k7jdQFJZtjv-lU1tjU
+
+{
+  "company": "timder",
+  "position": "actor"
 }
