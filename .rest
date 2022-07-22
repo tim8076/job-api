@@ -3,9 +3,7 @@ POST http://127.0.0.1:3000/api/v1/auth/register
 content-type: application/json
 
 {
-  "name": "peter2",
-  "email": "peter2@gmail.com",
-  "password": "123456"
+  "name": "peter2"
 }
 
 ### login user
@@ -13,42 +11,49 @@ POST http://127.0.0.1:3000/api/v1/auth/login
 content-type: application/json
 
 {
-  "email": "woo1@gmail.com",
-  "password": "1234"
+  "email": "peter2@gmail.com",
+  "password": "123456"
 }
 
 ###  create job
 
 POST http://127.0.0.1:3000/api/v1/job/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ4Yzc5ZTU5YTI1MzVkYmNmYTMxY2IiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4Mzc0MDQ2LCJleHAiOjE2NjA5NjYwNDZ9.oHxZnVpUqZSQUg8oA8ORiVN94k7jdQFJZtjv-lU1tjU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmRhMGUzMDU4OTkwYjZkY2MwNmUxZjUiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4NDU3Njc0LCJleHAiOjE2NjEwNDk2NzR9.b2oD_fw7ha2NhaSoSlOw5js7dX6fFwirSafXoTbA7bw
 
 {
-  "company": "facebook",
-  "position": "back-end developer"
+  "company": "google",
+  "position": "front-end developer"
 }
 
 ### get all jobs
 
 GET http://127.0.0.1:3000/api/v1/job/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ4Yzc5ZTU5YTI1MzVkYmNmYTMxY2IiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4Mzc0MDQ2LCJleHAiOjE2NjA5NjYwNDZ9.oHxZnVpUqZSQUg8oA8ORiVN94k7jdQFJZtjv-lU1tjU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmRhMGUzMDU4OTkwYjZkY2MwNmUxZjUiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4NDU3Njc0LCJleHAiOjE2NjEwNDk2NzR9.b2oD_fw7ha2NhaSoSlOw5js7dX6fFwirSafXoTbA7bw
 
 
 ### get single job
 
-GET http://127.0.0.1:3000/api/v1/job/62d8f74443b67a25f0092cc8
+GET http://127.0.0.1:3000/api/v1/job/62da0e7d58990b6dcc06e1fb
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ4Yzc5ZTU5YTI1MzVkYmNmYTMxY2IiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4Mzc0MDQ2LCJleHAiOjE2NjA5NjYwNDZ9.oHxZnVpUqZSQUg8oA8ORiVN94k7jdQFJZtjv-lU1tjU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmRhMGUzMDU4OTkwYjZkY2MwNmUxZjUiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4NDU3Njc0LCJleHAiOjE2NjEwNDk2NzR9.b2oD_fw7ha2NhaSoSlOw5js7dX6fFwirSafXoTbA7bw
 
 
 ### update single job
 
-PATCH http://127.0.0.1:3000/api/v1/job/62d8f74443b67a25f0092cc8
+PATCH http://127.0.0.1:3000/api/v1/job/62da0e7d58990b6dcc06e1fb
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ4Yzc5ZTU5YTI1MzVkYmNmYTMxY2IiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4Mzc0MDQ2LCJleHAiOjE2NjA5NjYwNDZ9.oHxZnVpUqZSQUg8oA8ORiVN94k7jdQFJZtjv-lU1tjU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmRhMGUzMDU4OTkwYjZkY2MwNmUxZjUiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4NDU3Njc0LCJleHAiOjE2NjEwNDk2NzR9.b2oD_fw7ha2NhaSoSlOw5js7dX6fFwirSafXoTbA7bw
 
 {
-  "company": "timder",
+  "company": "tinmder",
   "position": "actor"
 }
+
+###
+
+DELETE http://127.0.0.1:3000/api/v1/job/62da0e6858990b6dcc06e1f9
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmRhMGUzMDU4OTkwYjZkY2MwNmUxZjUiLCJuYW1lIjoicGV0ZXIyIiwiaWF0IjoxNjU4NDU3Njc0LCJleHAiOjE2NjEwNDk2NzR9.b2oD_fw7ha2NhaSoSlOw5js7dX6fFwirSafXoTbA7bw
+

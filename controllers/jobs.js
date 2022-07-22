@@ -35,8 +35,7 @@ const updateJob = async (req, res) => {
   if (company === '' || position === '') {
     throw new BadRequestError('Company or position field cannot be empty')
   }
-  const job = await Job.findOne({ _id: jobId });
-  console.log(job)
+  const job = await Job.findOne({ _id: jobId, createdBy: userId });
   if (!job) {
     throw new NotFoundError(`No job with id ${jobId}`);
   }
@@ -50,7 +49,16 @@ const updateJob = async (req, res) => {
 }
 
 const deleteJob = async (req, res) => {
-  res.send('getAllJobs')
+  const { 
+    user: { userId }, 
+    params: { id: jobId },
+  } = req;
+  const job = await Job.find({ _id: jobId, createdBy: userId });
+  if (!job) {
+    throw new NotFoundError(`No job with id ${jobId}`)
+  }
+  await Job.deleteOne({ _id: jobId });
+  res.status(StatusCodes.OK).json({ msg: 'job deleted'});
 }
 
 
